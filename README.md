@@ -4,7 +4,7 @@
 	
 1. Introduction & Motivations
 1. 導入
-1. Features
+1. 構造
 1. APIs
 1. 逆引きAutomatine
 
@@ -74,7 +74,7 @@ Auto(s) / Timeline(s) / Tack(s) / Coroutine(s) | ConditionKey & Value
 
 ☆図
 
-##API
+##APIs
 
 ☆AutoのAPI一覧、API Docの形式どうしようかな〜。
 
