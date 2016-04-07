@@ -30,7 +30,7 @@ Unity5.4以降でSeqencer(Timeline tool)が入るが、それとは異なる用�
 | やりたいこと        | Sequencer           | Automatine  |
 | ------------- |-------------:| -----:|
 | Assetをタイムラインにセット		| o | x |
-|シーン単位で実行| o | o |
+|シーン単位でタイムライン実行| o | o |
 |キャラ単位でタイムライン実行| difficult | o |
 |一部の動作を繰り返して実行| x | o |
 |状態の保持、管理| not suite | o |
@@ -40,7 +40,7 @@ Unity5.4以降でSeqencer(Timeline tool)が入るが、それとは異なる用�
 |AIの実装| not aimed | o |
 
 
-Sequencerがシネマティックなシーケンスを生成するのを主なMotivationにしているのに対し、Automatineはより細かい粒度での「キャラクターやオブジェクトの状態を管理し、スクリプトの実行と継続動作」を実現することを主な目的としている。
+Sequencerがシネマティックなシーケンスを制御するのを主なMotivationにしているのに対し、Automatineはより細かい粒度での「キャラクターやオブジェクトの状態を管理し、スクリプトの実行と継続動作」を実現することを主な目的としている。
 
 
 ###特徴
@@ -60,42 +60,77 @@ Sequencerがシネマティックなシーケンスを生成するのを主なMo
 
 ##導入
 
-☆Automatineを使い始めるにあたってのTutorial。
+☆Automatineを使い始めるにあたってのTutorial。gifアニメと解説の組み合わせになるはず。
 
 ###インストール
-Automatine フォルダをAssetsフォルダ以下に置く。
+Automatine フォルダをAssetsフォルダ以下に置く。  
 Assets/Automatine
 
+☆画像
+
+
 ###Automatine編集ウィンドウを開く
-☆
+Window > Automatine
 
-###新しいAutoを作成、保存
-☆GUIから。作成して名前をつけて、TimelineとTack置いて保存
+☆画像
 
-###コードから使う
-1. using Automatine;
-1. ☆とか
 
-###動かす
-1. Update
+###GUIでAutoを編集、出力
+1. 初めて開いた場合、☆特定の名前のAutoがあるはず。それにポイントを足して動かしてみる。
+1. 右クリックでタイムラインを追加
+1. タイムラインを右クリックしてタックを追加、位置や長さを適当にかえてみます
+1. 編集したAutoを出力
 
-###状態を取得する
+☆gifムービー
 
-###終了を検知する
 
-###切り替えてみる
-1. ☆new 
+###Cubeにautoをセットする
+Plane, Cubeを置いて、CubeにScriptを追加
 
-###停める
-Updateをやめるか、frameを加算するのを停めると、停止する。
+☆gifムービー
 
-###特定のタイミングでRoutineコードを実行する
-☆GUIからスクリプトをアタッチ、
+
+###コードから使う定義をする
+1. usingを追加する
+1. Autoを定義する
+1. int frame パラメータを定義
+
+☆コード
+
+
+###動かしてみる
+1. autoインスタンスのUpdateメソッドを追加
+1. frameをインクリメントするように追記
+1. autoの終了を検知したら動くif文を追加
+1. Play
+
+☆コード
+
+GUIでセットしたタックの最後まで実行が済むと、ログが出る。
+autoインスタンスから、実行が完了している状態かどうか取得することができる。
+
+
+###GUIでタックに状態をセットしてみる
+1. Automatineウインドウを開き、先ほど作ったタックを選択
+1. Inspectorから状態を追加☆ここ長そう
+1. 保存
+
+☆gifムービー
+
+
+###autoから状態を取得する
+1. 状態を取得するコードを記述
+1. Play
+
+☆コード
+
+autoインスタンスから、現在の状態を取得することができる。
+「この状態になったので何かする」、というようなトリガーを簡単に実装できる。
 
 
 ##構造
 
-☆簡単なレイヤーの紹介。  
+☆簡単なAutomatineのレイヤー構造の紹介。  
 Auto(s) / Timeline(s) / Tack(s) / Coroutine(s) | ConditionKey & Value
 
 ☆図
@@ -107,6 +142,6 @@ Auto(s) / Timeline(s) / Tack(s) / Coroutine(s) | ConditionKey & Value
 
 ##逆引きAutomatine
 
-☆こんなことがしたい、からFeaturesを紹介する。箇条書き
+☆こんなことがしたい、からFeaturesを紹介する。箇条書き、最大のサイズになると思う。
 
 
