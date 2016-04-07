@@ -18,7 +18,7 @@ Automatineは、タイムライン上に状態やスクリプトを配置し実�
 * 条件分岐を入れてAIのようなものを作りたい
 * 状態を持たせたい、別のタイムラインに引き継ぎたい(Condition)
 * サーバなど、Unity外でも動かしたい(Portability)
-* RuntimeとDataを分離したい(Updateable)
+* RuntimeとDataを分離したい(Updatable)
 * コードからPlay中の実行、更新、追加を行う()
 * GUIで設定の生成、変更、データ化を行う(Artist Friendly)
 
