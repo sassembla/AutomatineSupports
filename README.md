@@ -61,10 +61,36 @@ Sequencerがシネマティックなシーケンスを生成するのを主なMo
 ##導入
 
 ☆Automatineを使い始めるにあたってのTutorial。
-###Installation
-###動かしてみる
+
+###インストール
+Automatine フォルダをAssetsフォルダ以下に置く。
+Assets/Automatine
+
+###Automatine編集ウィンドウを開く
+☆
+
+###新しいAutoを作成、保存
+☆GUIから。作成して名前をつけて、TimelineとTack置いて保存
+
+###コードから使う
+1. using Automatine;
+1. ☆とか
+
+###動かす
+1. Update
+
+###状態を取得する
+
+###終了を検知する
+
 ###切り替えてみる
-###終了させる
+1. ☆new 
+
+###停める
+Updateをやめるか、frameを加算するのを停めると、停止する。
+
+###特定のタイミングでRoutineコードを実行する
+☆GUIからスクリプトをアタッチ、
 
 
 ##構造
